@@ -2,21 +2,21 @@
 
 Generative AI App is a modern web application that combines AI-powered language translation and image generation capabilities. Built with React and Vite, it offers an intuitive interface for translating text and generating images using Hugging Face's AI models.
 
-## ⚠️ Important Security Notice
+🔗 **[Live Demo](https://generative-ai-app-sigma.vercel.app/)**
+
+## ⚠️ Important Notes
 
 **This project is for demonstration purposes only!**
 
-The current implementation includes the API key in the frontend, which is **not secure for production use**. In a real-world application:
-
-- API keys and sensitive credentials should **never** be exposed in the frontend code
-- All API calls should be routed through a secure backend server
-- The backend should handle authentication and API key management
-- Implement proper rate limiting and security measures
+- The current implementation includes the API key in the frontend, which is **not secure for production use**
+- Image generation may take up to 30-60 seconds, please be patient while the AI model processes your request
+- All API calls should be routed through a secure backend server in a production environment
+- Implement proper rate limiting and security measures for production use
 
 ## 🚀 Features
 
 - **AI Translation**: Translate text with cultural context using Mixtral-8x7B model
-- **Image Generation**: Create images from text descriptions using FLUX.1 model
+- **Image Generation**: Create images from text descriptions using FLUX.1 model (Note: Generation takes time)
 - **Dual Functionality**: Switch between translation and image generation modes
 - **Interactive UI**: Real-time responses with loading indicators
 - **Fullscreen Image View**: Examine generated images in detail
@@ -108,8 +108,6 @@ For production deployment:
 3. Commit your changes
 4. Push to the branch
 5. Open a Pull Request
-
-#
 
 ## 🙏 Acknowledgments
 
