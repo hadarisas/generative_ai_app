@@ -8,9 +8,20 @@ import generateImage from "../utils/imageGen";
 import ImageView from "../components/ImageView";
 import ConversationHistory from "../components/ConversationHistory";
 
-const LOCAL_STORAGE_KEY = "ai-app-conversations";
+const getUserId = () => {
+  let userId = localStorage.getItem("ai-app-user-id");
+  if (!userId) {
+    userId =
+      "user_" + Date.now() + "_" + Math.random().toString(36).substr(2, 9);
+    localStorage.setItem("ai-app-user-id", userId);
+  }
+  return userId;
+};
 
 const Prompt = () => {
+  const userId = getUserId();
+  const LOCAL_STORAGE_KEY = `ai-app-conversations-${userId}`; // Make key unique per user
+
   const [activeTab, setActiveTab] = useState("translation");
   const [translations, setTranslations] = useState([]);
   const [generatedImages, setGeneratedImages] = useState([]);
