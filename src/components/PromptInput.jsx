@@ -5,30 +5,50 @@ const PromptInput = ({ getTranslate, placeholder }) => {
 
   const handleSubmit = (event) => {
     event.preventDefault();
+    if (!inputValue.trim()) return;
 
-    getTranslate(event);
+    const syntheticEvent = {
+      preventDefault: () => {},
+      target: {
+        prompt_query: {
+          value: inputValue,
+        },
+      },
+    };
 
+    getTranslate(syntheticEvent);
     setInputValue("");
   };
+
+  const handleKeyDown = (e) => {
+    if (e.key === "Enter" && !e.shiftKey) {
+      e.preventDefault();
+      handleSubmit(e);
+    }
+  };
+
   return (
-    <div className="sticky bottom-0 flex items-center justify-center  h-22 w-screen ">
-      <div className="relative mx-4 mb-2">
+    <div className="sticky bottom-0 flex items-center justify-center w-screen bg-white/50 backdrop-blur-sm">
+      <div className="relative mx-4 mb-2 w-full max-w-4xl">
         <form onSubmit={handleSubmit}>
-          <input
-            className="h-20 w-screen px-5 py-2 bg-transparent placeholder:text-slate-400 text-slate-700 text-base border border-slate-200 rounded-md transition duration-300 ease focus:outline-none focus:border-slate-400 hover:border-slate-300 shadow-sm focus:shadow"
+          <textarea
+            className="w-full px-5 py-3 bg-transparent placeholder:text-slate-400 text-slate-700 text-base border border-slate-200 rounded-md transition duration-300 ease focus:outline-none focus:border-slate-400 hover:border-slate-300 shadow-sm focus:shadow resize-none"
             placeholder={placeholder}
             name="prompt_query"
             id="prompt_query"
             value={inputValue}
             onChange={(e) => setInputValue(e.target.value)}
+            onKeyDown={handleKeyDown}
+            rows="3"
+            style={{ minHeight: "80px" }}
           />
           <button
-            className="absolute top-4 right-1 flex items-center rounded bg-transparent py-1 px-2.5  text-center text-sm  transition-all  hover:border-none text-slate-700 hover:text-slate-900 focus:shadow-none disabled:pointer-events-none disabled:opacity-50 disabled:shadow-none"
+            className="absolute bottom-3 right-2 flex items-center rounded bg-transparent py-1 px-2.5 text-center text-sm transition-all hover:border-none text-slate-700 hover:text-slate-900 focus:shadow-none disabled:pointer-events-none disabled:opacity-50 disabled:shadow-none"
             type="submit"
           >
             <svg
               xmlns="http://www.w3.org/2000/svg"
-              className="h-10"
+              className="h-8"
               viewBox="0 0 24 24"
               fill="none"
               stroke="currentColor"

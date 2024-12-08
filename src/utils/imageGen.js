@@ -10,8 +10,9 @@ async function generateImage(data) {
       body: JSON.stringify(data),
     }
   );
-  const result = await response.blob();
 
+  const result = await response.blob();
+  console.log(result);
   return result;
 }
 

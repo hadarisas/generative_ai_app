@@ -9,6 +9,7 @@ const SYSTEM_PROMPT = `You are a multilingual cultural translator designed for t
 - Responding in the same language as the input and using Markdown formatting for clarity and readability.
 `;
 
+// the Hugging Face API Key
 const hf = new HfInference(import.meta.env.VITE_HF_ACCESS_TOKEN);
 
 export async function culturaltranslatorMistral(userQuery) {
