@@ -28,9 +28,9 @@ const PromptInput = ({ getTranslate, placeholder }) => {
   };
 
   return (
-    <div className="sticky bottom-0 flex items-center justify-center w-screen bg-white/50 backdrop-blur-sm">
-      <div className="relative mx-4 mb-2 w-full max-w-4xl">
-        <form onSubmit={handleSubmit}>
+    <div className="sticky bottom-0 w-full bg-white/50 backdrop-blur-sm">
+      <div className="w-full px-4 pb-2">
+        <form onSubmit={handleSubmit} className="relative w-full">
           <textarea
             className="w-full px-5 py-3 bg-transparent placeholder:text-slate-400 text-slate-700 text-base border border-slate-200 rounded-md transition duration-300 ease focus:outline-none focus:border-slate-400 hover:border-slate-300 shadow-sm focus:shadow resize-none"
             placeholder={placeholder}
@@ -43,12 +43,12 @@ const PromptInput = ({ getTranslate, placeholder }) => {
             style={{ minHeight: "80px" }}
           />
           <button
-            className="absolute bottom-3 right-2 flex items-center rounded bg-transparent py-1 px-2.5 text-center text-sm transition-all hover:border-none text-slate-700 hover:text-slate-900 focus:shadow-none disabled:pointer-events-none disabled:opacity-50 disabled:shadow-none"
+            className="absolute top-1/2 right-4 -translate-y-1/2 flex items-center justify-center rounded-full hover:bg-slate-100 p-2 transition-all hover:border-none text-slate-700 hover:text-slate-900 focus:shadow-none disabled:pointer-events-none disabled:opacity-50 disabled:shadow-none"
             type="submit"
           >
             <svg
               xmlns="http://www.w3.org/2000/svg"
-              className="h-8"
+              className="h-10 w-10"
               viewBox="0 0 24 24"
               fill="none"
               stroke="currentColor"
