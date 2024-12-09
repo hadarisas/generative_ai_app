@@ -32,7 +32,7 @@ Generative AI App is a modern web application that combines AI-powered language 
 
 ## 📋 Prerequisites
 
-- Node.js (v14 or higher)
+- Node.js (v16 or higher)
 - npm or yarn
 - Hugging Face API key
 
@@ -90,24 +90,7 @@ yarn dev
    - Describe the image you want to create
    - View, download, or examine in fullscreen
 
-## 🔒 Security Considerations
 
-For production deployment:
-
-1. Move API calls to a backend server
-2. Implement proper authentication
-3. Secure API keys in backend environment
-4. Add rate limiting
-5. Implement user authentication
-6. Add input validation and sanitization
-
-## 🤝 Contributing
-
-1. Fork the repository
-2. Create a feature branch
-3. Commit your changes
-4. Push to the branch
-5. Open a Pull Request
 
 ## 🙏 Acknowledgments
 
@@ -115,17 +98,6 @@ For production deployment:
 - [Mixtral-8x7B](https://huggingface.co/mistralai/Mixtral-8x7B-Instruct-v0.1) for translation
 - [FLUX.1](https://huggingface.co/black-forest-labs/FLUX.1-dev) for image generation
 
-## 🐛 Known Issues
 
-- Frontend API key exposure (demonstration only)
-- Limited error handling
-- No rate limiting implementation
-- No user authentication
 
-## 📞 Support
 
-For support, please open an issue in the GitHub repository.
-
----
-
-**Note**: This project is a demonstration and should not be used in production without implementing proper security measures and moving API calls to a backend server.
