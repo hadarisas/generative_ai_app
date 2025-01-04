@@ -2,7 +2,7 @@
 
 Generative AI App is a modern web application that combines AI-powered language translation and image generation capabilities. Built with React and Vite, it offers an intuitive interface for translating text and generating images using Hugging Face's AI models.
 
-🔗 **[Live Demo](https://generative-ai-app-sigma.vercel.app/)**
+🔗 **[Live Demo](https://generative-ai-app-nine.vercel.app/)**
 
 ## ⚠️ Important Notes
 
